@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>todolist</title>
+    </head>
+
+    <body>
+        <div id="wrap"> 
+            <form id="form-submit">
+                <input id="form-text" type="text" placeholder="입력">
+                <input type="submit" value="추가">
+            </form>
+            <div id="result">
+            </div>
+        </div>
+        <div id="modal">
+            <div id="modal_info">
+                <p>삭제 하시겠습니까?</p>
+                <input class="modal_btn" type="button" value="네">
+                <input class="modal_btn" type="button" value="아니요">
+            </div>
+        </div>
+    </body>
+
+    <script>
+        const submit = document.querySelector("#form-submit");
+        const text = document.querySelector("#form-text");
+        const root = document.querySelector("#result"); //root
+        const modal = document.querySelector("#modal");
+        const modal_btn = document.querySelectorAll(".modal_btn");
+        let delete_target = '';
+
+        modal_btn.forEach((btn) => {
+            btn.addEventListener("click", modal_delete);
+        });
+
+        window.onload = function () { //페이지 로드 시
+            for(let i=0 ; i<localStorage.length ; i++){
+                let value = localStorage.getItem(localStorage.key(i));
+                let list = document.createElement("div");
+
+                list.classList.add("list");
+                list.innerHTML = value;
+                root.appendChild(list);
+            }
+
+            let del_btn_all = document.querySelectorAll(".list > input");
+            for(let i=0 ; i<del_btn_all.length ; i++)
+            {
+                del_btn_all[i].addEventListener("click", List.Delete);
+            }
+        }
+        var LocalStorage = {
+            Add : function(key, value){
+                if (typeof(Storage) !== "undefined") {
+                    localStorage.setItem(key,value);
+                } else {
+                    return;
+                }
+            },
+            Delete : function(key){
+                if (typeof(Storage) !== "undefined") {
+                localStorage.removeItem(key);
+                } else {
+                    return;
+                }
+            }
+        }
+        var List = {
+            Create : function(e){
+                e.preventDefault(); //submit 이벤트 시 새로고침 default
+                let check_list = document.querySelectorAll("span");//중복 확인용
+                let new_list = document.createElement("div"); //div생성
+                let new_value = `
+                <span>${text.value}</span>
+                <input type = button value = '삭제'>
+                `;
+
+                if (text.value.length === 0) return;
+                for(let i=0 ; i<check_list.length ; i++)
+                {
+                    if(check_list[i].innerHTML === text.value){
+                        alert("이미 중복되었습니다!");
+                        text.value = "";
+                        return;
+                    }
+                }
+                
+                new_list.classList.add("list");
+                new_list.innerHTML = new_value;
+                root.appendChild(new_list);
+                new_list.querySelector("input").addEventListener("click", List.Delete);
+
+                LocalStorage.Add(text.value,new_value);
+                
+                text.value = "";
+            },
+            Delete : function(e){
+                modal.style.display = 'block';//모달창 띄우기
+                delete_target = e.target;//발생한 이벤트 노드
+            }
+        }
+        function modal_delete(e){
+            if(delete_target === '') return;
+            if(e.target.value === '네')
+            {
+                let target_parent = delete_target.parentNode;//삭제할 부모노드
+                let key = delete_target.previousElementSibling.innerHTML;//로컬스토리지 키 값
+                
+                LocalStorage.Delete(key);
+                target_parent.remove();
+            }
+            modal.style.display = "none";
+        }
+        submit.addEventListener("submit", List.Create);
+    </script>
+</html>

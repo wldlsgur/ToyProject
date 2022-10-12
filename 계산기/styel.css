@@ -1,0 +1,22 @@
+table{
+    text-align: center;
+    border-collapse: collapse;
+    margin: auto;
+    margin-top : 10%;
+    background-color:beige;
+    width: 25%;
+}
+
+input[type = "text"]{
+    text-align: right;
+    border: none;
+    background-color: beige;
+    width: 300px;
+    height: 50px;
+}
+
+td{
+    border-style: solid;
+    padding: 20px;
+    margin : auto;
+}

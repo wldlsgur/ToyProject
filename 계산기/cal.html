@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styel.css">
+    <title>계산기</title>
+</head>
+
+<body>
+    <div class = "wrap">
+        <table class = "table">
+            <caption>계산기</caption>
+            <thead></thead>
+            <tfoot></tfoot>
+            <tbody>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" placeholder="0" id = "input">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <input type="text" placeholder="0" id = "output">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" onclick="cal.clear()">AC</td><td onclick="cal.add('/')">/</td>   
+                </tr>
+                <tr>
+                    <td onclick="cal.add(7)">7</td><td onclick="cal.add(8)">8</td><td onclick="cal.add(9)">9</td><td onclick="cal.add('*')">*</td>
+                </tr>
+                <tr>
+                    <td onclick="cal.add(4)">4</td><td onclick="cal.add(5)">5</td><td onclick="cal.add(6)">6</td><td onclick="cal.add('-')">-</td>
+                </tr>
+                <tr>
+                    <td onclick="cal.add(1)">1</td><td onclick="cal.add(2)">2</td><td onclick="cal.add(3)">3</td><td onclick="cal.add('+')">+</td>
+                </tr>
+                <tr>
+                    <td colspan="2" onclick="cal.add(0)">0</td><td onclick="cal.add('.')">.</td><td onclick="cal.result()">=</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>

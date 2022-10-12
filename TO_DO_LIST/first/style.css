@@ -1,0 +1,70 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+#modal{
+    display: none;
+    border: 3px solid white;
+    border-radius: 7px;
+    background-image: url("./image/backgroundimage.jpg");
+    height: 25%;
+    width: 15%;
+    position:absolute;
+    left: 42%;
+    top: 35%;
+}
+#modal_info{
+    margin-top: 27%;
+    text-align: center;
+    letter-spacing: 5px;
+    color: white;
+}
+.modal_btn{
+    margin:10%;
+    background-color: white;
+    border: 3px solid white;
+    border-radius: 7px;
+}
+body{
+    background-image: url("./image/backgroundimage.jpg");
+}
+#wrap{
+    position: relative;
+    border:3px solid white;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top : 5%;
+    width: 30%;
+    height: 600px;
+}
+#form-submit{
+    border-bottom: 3px solid white;
+    text-align: center;
+    padding :30px;
+}
+#form-text{
+    text-align: center;
+    width: 80%;
+    border: 3px solid white;
+    border-radius: 7px;
+}
+#form-submit > input[type=submit]{
+    border-radius: 7px;
+}
+#result{
+    height: 515px;
+    overflow: scroll;
+    -ms-overflow-style: none;
+}
+/* 스크롤바 숨기기 */
+#result::-webkit-scrollbar{ display:none; }
+
+.list{
+    color: white;
+    margin : 30px;
+    border-bottom: 3px solid white;
+}
+.list > input{
+    float : right;
+    border-radius: 7px;
+}
