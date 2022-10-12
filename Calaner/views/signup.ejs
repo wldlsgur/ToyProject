@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+  </head>
+  <body>
+    <section class="wrap">
+      <h3 class="wrap__title">회원가입</h3>
+      <form class="signup-form">
+        <div id="image_wrap">
+          <input type="file" name="image" id="image" accept="image/*" />
+          <div id="image_container">
+            <img src="/images/bory.jpg" alt="" id="user_image" />
+          </div>
+        </div>
+        <div class="sameid">
+          <label for="sameId__sameIdCb" class="sameid__label">Same ID</label>
+          <input
+            type="checkbox"
+            class="sameid__checkbox"
+            id="sameId__sameIdCb"
+          />
+        </div>
+        <div class="form-input">
+          <input
+            type="text"
+            placeholder="아이디"
+            class="form-input__id"
+            required
+          />
+          <input
+            type="text"
+            placeholder="비밀번호"
+            class="form-input__pw"
+            required
+          />
+          <input
+            type="text"
+            placeholder="이름"
+            class="form-input__name"
+            required
+          />
+          <input type="submit" value="회원가입" class="form-input__submit" />
+        </div>
+      </form>
+    </section>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+  <script type="module" src="/javascript/webpack/signup_bundle.js"></script>
+</html>

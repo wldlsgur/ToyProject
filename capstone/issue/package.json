@@ -1,0 +1,27 @@
+{
+  "name": "issue",
+  "version": "0.0.0",
+  "author": "wldlsgur, dhgg321@naver.com",
+  "private": true,
+  "scripts": {
+    "start": "pm2 start ./bin/www -- start",
+    "stop": "pm2 stop ./bin/www",
+    "test": "jest --detectOpenHandles --forceExit"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "eslint": "^8.15.0",
+    "express": "~4.16.1",
+    "firebase-admin": "^10.2.0",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.4",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {
+    "eslint-plugin-jest": "^26.2.2"
+  }
+}

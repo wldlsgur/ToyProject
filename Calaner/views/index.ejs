@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>login</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="content">
+        <h1 class="content__title">Calander</h1>
+        <h3 class="content__adminName">지인혁</h3>
+      </div>
+    </header>
+    <section class="login">
+      <h3 class="login__title">Login</h3>
+      <form class="login-form">
+        <div class="auto-login">
+          <label for="login-form__autologin" class="login-form__checkAutoLogin"
+            >Auto Login</label
+          >
+          <input type="checkbox" id="login-form__autologin" />
+        </div>
+        <input
+          type="text"
+          placeholder="아이디"
+          class="login-form__id"
+          required
+        />
+        <input
+          type="text"
+          placeholder="비밀번호"
+          class="login-form__pw"
+          required
+        />
+        <input type="submit" value="로그인" class="login-form__login" />
+        <input type="button" value="회원가입" class="login-form__singUp" />
+      </form>
+    </section>
+  </body>
+  <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+  <script
+    defer
+    type="module"
+    src="/javascript/webpack/index_bundle.js"
+  ></script>
+</html>

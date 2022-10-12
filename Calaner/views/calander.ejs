@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css"
+    />
+    <title>Calander</title>
+  </head>
+  <body>
+    <input type="hidden" id="user_id" value="<%= id %>" />
+    <input type="hidden" id="room_id" value="<%= room_id %>" />
+    <input type="hidden" id="userName" value="<%= name %>" />
+    <input type="hidden" value="<%= photo_path %>" id="userImage" />
+    <header>
+      <button class="header__menu"><i class="bi bi-list"></i></button>
+      <div class="user-info">
+        <img src="/images/basicImage.jpg" alt="" class="user-info__image" />
+        <p class="user-info__name"><%= name %>님.</p>
+      </div>
+    </header>
+    <!-- Header -->
+    <main>
+      <section class="calander">
+        <div class="header">
+          <button class="header__add"><i class="bi bi-file-plus"></i></button>
+          <h3 class="header__title"></h3>
+          <div>
+            <button><i class="bi bi-caret-left"></i></button>
+            <button><i class="bi bi-caret-right"></i></button>
+          </div>
+        </div>
+        <table border="1" class="table-calander"></table>
+      </section>
+      <section class="personnelAndChat">
+        <div class="personnel">
+          <div class="header">
+            <h3 class="header__title">참여 인원</h3>
+          </div>
+          <div class="personnelList"></div>
+        </div>
+        <div class="chat">
+          <div class="header">
+            <h3 class="header__title">채팅방</h3>
+          </div>
+          <div class="chatList">
+            <div class="chatList__msg"></div>
+            <form class="chatWrite">
+              <textarea class="chatWrite__input"></textarea>
+              <input type="submit" class="chatWrite__submit" value="전송" />
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+    <div class="menubar">
+      <ul class="menulist">
+        <li class="menulist__logout">로그아웃</li>
+        <li class="menulist__room">방 선택</li>
+        <li class="menulist__changeinfo">회원 정보 수정</li>
+      </ul>
+    </div>
+
+    <div class="modalComment">
+      <div class="commentForm">
+        <input type="date" class="commentForm__date" />
+        <textarea
+          class="commentForm__content"
+          cols="40"
+          rows="10"
+          placeholder="일정 입력.."
+        ></textarea>
+        <div class="commentForm__btn">
+          <input type="submit" value="작성" class="commentForm__btn--submit" />
+          <input type="button" value="취소" class="commentForm__btn--exit" />
+        </div>
+      </div>
+    </div>
+    <!-- 위에는 콘텐츠 생성 모달 -->
+    <div class="modalCommentInfo">
+      <div class="commentInfo">
+        <input type="hidden" placeholder="contentId" class="contentId" />
+        <div class="userInfo">
+          <img src="" alt="" class="userInfo__img" />
+          <p class="userInfo__name"></p>
+        </div>
+        <p class="commentInfo__date"></p>
+        <p class="commentInfo__content"></p>
+        <div class="commentForm__btn">
+          <input type="submit" value="삭제" class="commentForm__btn--submit" />
+          <input type="button" value="취소" class="commentForm__btn--exit" />
+        </div>
+      </div>
+    </div>
+    <!-- 콘텐츠 정보 모달 -->
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+  <script src="/javascript/webpack/calander_bundle.js" type="module"></script>
+</html>

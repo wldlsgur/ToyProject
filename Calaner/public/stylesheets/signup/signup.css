@@ -1,0 +1,71 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+html,
+body {
+  font-size: 100%;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.wrap {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.wrap > .wrap__title {
+  text-align: center;
+  color: white;
+  padding-top: 5%;
+  margin-bottom: 1%;
+}
+.wrap > .signup-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 50px 0px 50px;
+}
+.wrap > .signup-form > .sameid > .sameid__label {
+  color: white;
+}
+.wrap > .signup-form > .form-input {
+  display: flex;
+  flex-direction: column;
+}
+.wrap > .signup-form > .form-input > input {
+  background-color: #222225;
+  color: white;
+  height: 50px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+}
+.wrap > .signup-form > .form-input > input[type=text] {
+  padding: 0px 20px 0px 20px;
+}
+.wrap > .signup-form > #image_wrap {
+  margin: auto;
+}
+.wrap > .signup-form > #image_wrap > #image {
+  color: white;
+}
+.wrap > .signup-form > #image_wrap > #image_container {
+  margin: auto;
+}
+.wrap > .signup-form > #image_wrap > #image_container > #user_image {
+  width: 300px;
+  height: 300px;
+}/*# sourceMappingURL=signup.css.map */

@@ -1,0 +1,408 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 3rem;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  height: 100vh;
+  background-color: black;
+  padding: 0px 20px 0px 20px;
+}
+
+img {
+  width: 100px;
+  height: 90px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+header {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+header > .user-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+header > .user-info > .user-info__image {
+  border-radius: 50%;
+  margin-right: 20px;
+}
+header > .user-info > .user-info__name {
+  color: white;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+main > section {
+  height: 100%;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 20px 20px 20px 20px;
+}
+main > .calander {
+  flex: 1 1 50%;
+  overflow: auto;
+}
+main > .calander > .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main > .calander > .table-calander {
+  margin-top: 20px;
+  width: 100%;
+}
+main > .calander > .table-calander > tbody > tr {
+  display: flex;
+}
+main > .calander > .table-calander > tbody > tr > td {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  height: 150px;
+  padding: 0px 10px 0px 10px;
+}
+main > .calander > .table-calander > tbody > tr > .dayOfWeek {
+  height: 30px;
+}
+main > .calander > .table-calander th,
+main > .calander > .table-calander td {
+  width: 150px;
+  border: 1px solid white;
+  color: white;
+}
+main > .calander > .table-calander td:nth-child(1),
+main > .calander > .table-calander th:nth-child(1) {
+  color: red;
+}
+main > .calander > .table-calander td:nth-child(7),
+main > .calander > .table-calander th:nth-child(7) {
+  color: blue;
+}
+main > .personnelAndChat {
+  flex: 1 1 25%;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+main > .personnelAndChat > .personnel {
+  flex: 1 1 30%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+main > .personnelAndChat > .personnel > .header {
+  flex: 1 1 5%;
+  border-bottom: solid 1px white;
+}
+main > .personnelAndChat > .personnel > .personnelList {
+  flex: 1 1 95%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 10px 10px;
+}
+main > .personnelAndChat > .personnel > .personnelList > .personnel {
+  padding: 10px 10px 10px 10px;
+  margin-bottom: 10px;
+  border: 1px solid white;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+main > .personnelAndChat > .personnel > .personnelList > .personnel > .personnelUser {
+  display: flex;
+  align-items: center;
+}
+main > .personnelAndChat > .personnel > .personnelList > .personnel > .personnelUser > .personnelUser__name {
+  margin-left: 10px;
+}
+main > .personnelAndChat > .personnel > .personnelList > .personnel > .personnelUser > .personnelUser__img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+main > .personnelAndChat > .personnel > .personnelList p {
+  white-space: normal;
+  margin-top: 10px;
+  color: white;
+}
+main > .personnelAndChat > .chat {
+  flex: 1 1 70%;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+main > .personnelAndChat > .chat > .header {
+  top: 0;
+  flex: 1 1 5%;
+  border-bottom: solid 1px white;
+}
+main > .personnelAndChat > .chat > .chatList {
+  flex: 1 1 95%;
+  display: flex;
+  flex-direction: column;
+}
+main > .personnelAndChat > .chat > .chatList > .chatList__msg {
+  flex: 1 1 85%;
+  display: flex;
+  flex-direction: column;
+}
+main > .personnelAndChat > .chat > .chatList > .chatList__msg > .mymsg,
+main > .personnelAndChat > .chat > .chatList > .chatList__msg .msg {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+main > .personnelAndChat > .chat > .chatList > .chatList__msg > .mymsg p,
+main > .personnelAndChat > .chat > .chatList > .chatList__msg .msg p {
+  color: white;
+  margin: 0;
+}
+main > .personnelAndChat > .chat > .chatList > .chatList__msg > .mymsg img,
+main > .personnelAndChat > .chat > .chatList > .chatList__msg .msg img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+main > .personnelAndChat > .chat > .chatList > .chatList__msg > .mymsg {
+  align-items: flex-end;
+}
+main > .personnelAndChat > .chat > .chatList > .chatList__msg > .mymsg > .mymsg__content {
+  white-space: normal;
+}
+main > .personnelAndChat > .chat > .chatList > .chatList__msg > .msg {
+  align-items: flex-start;
+}
+main > .personnelAndChat > .chat > .chatList > .chatList__msg > .msg > .msg__content {
+  white-space: normal;
+}
+main > .personnelAndChat > .chat > .chatList > .chatList__msg > .msg > .msg__NameAndContent {
+  display: flex;
+  align-items: center;
+}
+main > .personnelAndChat > .chat > .chatList > .chatList__msg > .msg > .msg__NameAndContent > .msg__name {
+  margin-left: 10px;
+}
+main > .personnelAndChat > .chat > .chatList > .chatWrite {
+  height: 100px;
+  display: flex;
+}
+main > .personnelAndChat > .chat > .chatList > .chatWrite > .chatWrite__input {
+  flex: 1 1 90%;
+}
+main > .personnelAndChat > .chat > .chatList > .chatWrite > .chatWrite__submit {
+  flex: 1 1 10%;
+  background-color: darkgray;
+  color: white;
+}
+main .header__title,
+main .plan-list__title,
+main .chat__title {
+  color: white;
+  text-align: center;
+}
+
+.modalComment {
+  display: none;
+  border-radius: 20px;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -250px;
+  background-color: #222225;
+}
+.modalComment > .commentForm {
+  margin: 30px 30px 0px 30px;
+  display: flex;
+  flex-direction: column;
+}
+.modalComment > .commentForm > * {
+  border-radius: 15px;
+}
+.modalComment > .commentForm > input,
+.modalComment > .commentForm textarea {
+  margin-bottom: 20px;
+  padding: 20px 20px 20px 20px;
+}
+.modalComment > .commentForm > .commentForm__btn {
+  display: flex;
+  justify-content: space-around;
+}
+.modalComment > .commentForm > .commentForm__btn > input {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+}
+
+.modalCommentInfo {
+  display: none;
+  border-radius: 20px;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -250px;
+  background-color: #222225;
+}
+.modalCommentInfo > .commentInfo {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20px 20px 20px;
+}
+.modalCommentInfo > .commentInfo > .commentInfo__content {
+  width: 100%;
+  height: 200px;
+  overflow: auto;
+}
+.modalCommentInfo > .commentInfo > .userInfo {
+  display: flex;
+  align-items: center;
+}
+.modalCommentInfo > .commentInfo > .userInfo > .userInfo__img {
+  padding: 20px 20px 20px 20px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+}
+.modalCommentInfo > .commentInfo p {
+  border: 1px solid white;
+  color: white;
+  padding: 20px 20px 20px 20px;
+  margin: 0px;
+}
+.modalCommentInfo > .commentInfo > .commentForm__btn {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+.modalCommentInfo > .commentInfo > .commentForm__btn > .commentForm__btn--submit {
+  display: none;
+}
+.modalCommentInfo > .commentInfo > .commentForm__btn > input {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+}
+
+.menubar {
+  display: none;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-name: slidein;
+          animation-name: slidein;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.menubar > .menulist > li {
+  font-size: large;
+  border-bottom: 1px solid black;
+  padding: 0px 20px 0px 20px;
+  margin: 30px 20px 0px 20px;
+}
+
+@-webkit-keyframes slidein {
+  from {
+    width: 0%;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  to {
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+
+@keyframes slidein {
+  from {
+    width: 0%;
+    background-color: rgba(255, 255, 255, 0);
+  }
+  to {
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
+.contentInfo {
+  display: flex;
+}
+.contentInfo > .contentInfo__img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.contentInfo > .contentInfo__name {
+  margin-left: 6px;
+}
+
+@media screen and (max-width: 900px) {
+  main {
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  section.calander {
+    flex: 1 1 100%;
+  }
+  section.personnelAndChat {
+    flex: 1 1 100%;
+    margin: 20px 0px 0px 0px;
+  }
+  .modalCommentInfo,
+.modalComment {
+    width: 350px;
+    height: 450px;
+    margin-left: -175px;
+    margin-top: -225px;
+  }
+}
+.joinAndLeave {
+  color: blue;
+}/*# sourceMappingURL=calander.css.map */

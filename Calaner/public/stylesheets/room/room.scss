@@ -1,0 +1,282 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+}
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+html {
+  font-size: 100%;
+  height: 100%;
+}
+body {
+  height: 100%;
+}
+
+.header {
+  background-color: black;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 20px 0px 20px;
+  > .header__menu {
+    background-color: black;
+    > i {
+      font-size: 3em;
+      color: white;
+    }
+  }
+  > .header__add {
+    background-color: black;
+    > i {
+      font-size: 3em;
+      margin-left: 85px;
+      color: white;
+    }
+  }
+  > .user-info {
+    display: flex;
+    align-items: center;
+    > .user-info__image {
+      margin-right: 20px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    > .user-info__name {
+      color: white;
+    }
+  }
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: black;
+  > .room-list {
+    margin: 0px 10px 0px 10px;
+    overflow: auto;
+    border: 1px solid white;
+    border-radius: 5%;
+    flex: 1 1 50%;
+    display: flex;
+    flex-direction: column;
+    > .room-list__title {
+      color: white;
+      text-align: center;
+      padding-top: 10px;
+    }
+    > .serach {
+      display: flex;
+      padding: 20px 20px 0px 20px;
+      width: 100%;
+      > .search__input {
+        color: white;
+        height: 30px;
+        border-radius: 50px;
+        padding: 0px 20px 0px 20px;
+        background-color: #222225;
+        flex: 1;
+      }
+      > .search__btn {
+        background-color: black;
+        color: white;
+      }
+    }
+    > .room {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid white;
+      padding: 0px 20px 0px 20px;
+      margin: 20px 20px 0px 20px;
+      > .room__name {
+        color: white;
+        display: -webkit-box;
+        /* 글씨 줄이 1줄이 최대로 고정 시키는 것 */
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+      }
+      > .room__now {
+        color: white;
+      }
+    }
+  }
+  .my-room-list {
+    flex: 1 1 50%;
+    border: 1px solid white;
+    border-radius: 5%;
+    margin: 0px 10px 0px 10px;
+    > .my-room-list__title {
+      color: white;
+      text-align: center;
+      padding-top: 10px;
+    }
+    > .my-room-serach {
+      display: flex;
+      padding: 20px 20px 0px 20px;
+      width: 100%;
+      > .my-room-serach__text {
+        flex: 1;
+        color: white;
+        height: 30px;
+        border-radius: 50px;
+        padding: 0px 20px 0px 20px;
+        background-color: #222225;
+      }
+      > .my-room-serach__button {
+        background-color: black;
+        color: white;
+      }
+    }
+    > .my-room {
+      display: flex;
+      padding: 0px 20px 0px 20px;
+      margin: 20px 20px 0px 20px;
+      border-bottom: 1px solid white;
+      justify-content: space-between;
+      overflow: auto;
+      > .my-room__name {
+        color: white;
+        display: -webkit-box;
+        /* 글씨 줄이 2줄이 최대로 고정 시키는 것 */
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        overflow: hidden;
+      }
+      > p {
+        color: white;
+      }
+    }
+  }
+}
+.create-room,
+.modal-myroom,
+.modal-room {
+  display: none;
+  border-radius: 20px;
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -250px;
+  margin-top: -250px;
+  > h3 {
+    margin-top: 50px;
+    text-align: center;
+    color: black;
+  }
+}
+.create-room {
+  > .create-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px 0px 20px;
+    margin: 50px 0px 0px 0px;
+    > input {
+      background-color: #222225;
+      color: white;
+      height: 50px;
+      margin-bottom: 10px;
+      border-radius: 20px;
+      padding: 0px 20px 0px 20px;
+    }
+  }
+}
+
+.modal-myroom,
+.modal-room {
+  .myroom-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px 0px 20px;
+    margin: 100px 0px 0px 0px;
+    > .room-btn {
+      display: flex;
+      justify-content: space-around;
+      > .room-btn__delete {
+        display: none;
+      }
+      > button {
+        background-color: #222225;
+        color: white;
+        height: 50px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        padding: 0px 20px 0px 20px;
+      }
+    }
+    .title,
+    .personnel,
+    .room-pw {
+      background-color: #222225;
+      color: white;
+      height: 50px;
+      margin-bottom: 10px;
+      border-radius: 20px;
+      padding: 10px 20px 10px 20px;
+    }
+  }
+}
+
+.menubar {
+  display: none;
+  animation-duration: 2s;
+  animation-name: slidein;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  width: 30%;
+  height: 100%;
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  background-color: rgba($color: white, $alpha: 0.7);
+  > .menulist {
+    > li {
+      font-size: large;
+      border-bottom: 1px solid black;
+      padding: 0px 20px 0px 20px;
+      margin: 30px 20px 0px 20px;
+    }
+  }
+}
+@keyframes slidein {
+  from {
+    width: 0%;
+    background-color: rgba($color: white, $alpha: 0);
+  }
+  to {
+    width: 30%;
+    background-color: rgba($color: white, $alpha: 0.7);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+  .create-room,
+  .modal-myroom,
+  .modal-room {
+    width: 350px;
+    height: 450px;
+    margin-left: -175px;
+    margin-top: -225px;
+  }
+}
