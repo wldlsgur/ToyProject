@@ -1,18 +1,16 @@
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/HOME/home";
 
 function App() {
   return (
-    <>
-      <Router>
-        <Switch>
-          <Route path="/main" component={} />
-          <Route path="/profile" component={} />
-          <Route path="/" component={} />
-          <Route render={() => <div className="error">에러 페이지</div>} />
-        </Switch>
-      </Router>
-    </>
+    <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} exact />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
