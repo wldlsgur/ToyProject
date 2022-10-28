@@ -1,0 +1,13 @@
+.input {
+  display: flex;
+  height: 70px;
+
+  > .input__text {
+    padding: 10px 10px 10px 10px;
+    flex: 1 1 90%;
+  }
+
+  > .input__addBtn {
+    flex: 1 1 10%;
+  }
+}

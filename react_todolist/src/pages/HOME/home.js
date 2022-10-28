@@ -1,9 +1,12 @@
 import HeaderComponent from "../../componets/header";
+import InputComponent from "../../componets/input";
+import "../../styles/HOME/home.css";
 
-const Home = () => {
+const Home = (props) => {
   return (
-    <div>
+    <div className="homePage">
       <HeaderComponent></HeaderComponent>
+      <InputComponent></InputComponent>
     </div>
   );
 };

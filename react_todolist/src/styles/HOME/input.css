@@ -1,0 +1,11 @@
+.input {
+  display: flex;
+  height: 70px;
+}
+.input > .input__text {
+  padding: 10px 10px 10px 10px;
+  flex: 1 1 90%;
+}
+.input > .input__addBtn {
+  flex: 1 1 10%;
+}/*# sourceMappingURL=input.css.map */

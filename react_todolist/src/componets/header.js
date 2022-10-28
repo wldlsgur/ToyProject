@@ -1,7 +1,9 @@
-const HeaderComponent = () => {
+import "../styles/HOME/header.css";
+
+const HeaderComponent = (props) => {
   return (
     <div className="header">
-      <h4>HI</h4>
+      <h4>일정관리</h4>
     </div>
   );
 };
