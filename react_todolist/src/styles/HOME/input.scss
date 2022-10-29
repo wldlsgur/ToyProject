@@ -2,12 +2,21 @@
   display: flex;
   height: 70px;
 
+  > .input__text,
+  .input__addBtn {
+    color: white;
+  }
   > .input__text {
     padding: 10px 10px 10px 10px;
     flex: 1 1 90%;
+    background-color: gray;
+  }
+  .input__text::placeholder {
+    color: white;
   }
 
   > .input__addBtn {
     flex: 1 1 10%;
+    background-color: darkgray;
   }
 }

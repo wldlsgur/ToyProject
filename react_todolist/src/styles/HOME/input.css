@@ -2,10 +2,25 @@
   display: flex;
   height: 70px;
 }
+.input > .input__text,
+.input .input__addBtn {
+  color: white;
+}
 .input > .input__text {
   padding: 10px 10px 10px 10px;
   flex: 1 1 90%;
+  background-color: gray;
+}
+.input .input__text::-moz-placeholder {
+  color: white;
+}
+.input .input__text:-ms-input-placeholder {
+  color: white;
+}
+.input .input__text::placeholder {
+  color: white;
 }
 .input > .input__addBtn {
   flex: 1 1 10%;
+  background-color: darkgray;
 }/*# sourceMappingURL=input.css.map */
