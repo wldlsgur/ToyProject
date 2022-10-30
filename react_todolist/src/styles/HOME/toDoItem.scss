@@ -1,0 +1,17 @@
+.toDoItem {
+  display: flex;
+  justify-content: space-between;
+
+  > .toDOItem__CheckAndText {
+    display: flex;
+    flex: 1;
+    > .toDOItem__CheckAndText__Check {
+    }
+    > .toDOItem__CheckAndText__text {
+    }
+  }
+
+  > .todoItem__Btn {
+    // display: flex;
+  }
+}

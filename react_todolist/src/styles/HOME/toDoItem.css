@@ -1,0 +1,8 @@
+.toDoItem {
+  display: flex;
+  justify-content: space-between;
+}
+.toDoItem > .toDOItem__CheckAndText {
+  display: flex;
+  flex: 1;
+}/*# sourceMappingURL=toDoItem.css.map */
