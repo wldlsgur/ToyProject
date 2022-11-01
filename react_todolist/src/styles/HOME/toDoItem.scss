@@ -1,6 +1,10 @@
 .toDoItem {
   display: flex;
+  height: 30px;
   justify-content: space-between;
+  align-items: center;
+  margin: 20px 20px 20px 20px;
+  border-bottom: 1px solid black;
 
   > .toDOItem__CheckAndText {
     display: flex;
@@ -8,10 +12,17 @@
     > .toDOItem__CheckAndText__Check {
     }
     > .toDOItem__CheckAndText__text {
+      margin-left: 20px;
     }
   }
 
-  > .todoItem__Btn {
-    // display: flex;
+  > .toDoItem__Btn {
+    > .toDoItem__Btn__add {
+      margin-right: 20px;
+      color: black;
+    }
+    > .toDoItem__Btn__del {
+      color: red;
+    }
   }
 }

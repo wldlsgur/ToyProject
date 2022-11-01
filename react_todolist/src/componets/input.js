@@ -4,10 +4,21 @@ import React, { useRef } from "react";
 const InputComponent = (props) => {
   const inputRef = useRef(null);
 
-  const addTodoList = (e) => {
+  const addTodoList = () => {
+    if (!inputRef.current.value) {
+      return alert("no text!");
+    }
+    // if (props.toDoList.includes(inputRef.current.value)) {
+    //   return alert("already text!");
+    // }
+
     let copy = [...props.toDoList];
-    copy.push(inputRef.current.value);
+    copy.push({
+      id: ++props.id[0],
+      text: inputRef.current.value,
+    });
     props.setToDoList(copy);
+    inputRef.current.value = "";
   };
 
   return (

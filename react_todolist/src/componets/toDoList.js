@@ -1,13 +1,18 @@
 import "../styles/HOME/toDoList.css";
 import ToDoItemComponent from "./toDoItem";
-const ToDoListComponent = (props) => {
-  let keys = 0;
 
+const ToDoListComponent = (props) => {
   return (
     <div className="toDoList">
-      {props.toDoList.map((value) => {
+      {props.toDoList.map((value, index) => {
         return (
-          <ToDoItemComponent key={++keys} text={value}></ToDoItemComponent>
+          <ToDoItemComponent
+            toDoList={props.toDoList}
+            setToDoList={props.setToDoList}
+            key={value.id}
+            id={value.id}
+            text={value.text}
+          ></ToDoItemComponent>
         );
       })}
     </div>

@@ -4,6 +4,7 @@ import ToDoListComponent from "../../componets/toDoList";
 import "../../styles/HOME/home.css";
 import { useState } from "react";
 
+let keys = [0];
 const Home = (props) => {
   let [toDoList, setToDoList] = useState([]);
 
@@ -14,6 +15,7 @@ const Home = (props) => {
       <InputComponent
         toDoList={toDoList}
         setToDoList={setToDoList}
+        id={keys}
       ></InputComponent>
 
       <ToDoListComponent
