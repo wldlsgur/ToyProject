@@ -11,7 +11,7 @@ const InputComponent = (props) => {
     // if (props.toDoList.includes(inputRef.current.value)) {
     //   return alert("already text!");
     // }
-
+    //객체라 아직 작동x
     let copy = [...props.toDoList];
     copy.push({
       id: ++props.id[0],
