@@ -6,7 +6,7 @@ import { useState } from "react";
 
 let keys = [0];
 const Home = (props) => {
-  let [toDoList, setToDoList] = useState([]);
+  const [toDoList, setToDoList] = useState([]);
 
   return (
     <div className="homePage">
